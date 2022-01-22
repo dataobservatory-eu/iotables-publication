@@ -48,9 +48,9 @@ The current version of *iotables* works with a metadata table that contains four
 
 The `iotables_download()` and the `iotable_get()` functions download and retrieve a single, properly processed input-output table from the Eurostat data warehouse. In this example, which is a simplification of the [Introduction to iotables](https://iotables.dataobservatory.eu/articles/intro.html) vignette, we use the built-in simplified input-output table for Germany taken from the *Eurostat Manual*.
 
-The various data wrangling functions of `household_column_get`, `output_get`, `primary_input_get` help to subset often used sub-matrixes or vectors from the input-output table, which is often hidden with labelling not immediately familiar to the analyst.  The `total_tax_add` and `supplementary_add` help merging tax row and adding auxiliary data to input-output table with maintaining the strict ordering and labelling of the matrixes.
+The various data wrangling functions of `household_column_get`, `output_get`, `primary_input_get` help to subset often used sub-matrixes or vectors from the input-output table, which is often hidden with labelling not immediately familiar to the analyst.  The `total_tax_add` and `supplementary_add` help merging tax row and adding auxiliary data to input-output table with maintaining the strict ordering and labelling of the matrixes. we also adopted various tidyverse functions, for example, `vector_transpose_longer` and `vector_transpose_wider` which keep the key column, and the strict row/column order of various vectors needed in the input-output system.  
 
-```{r}
+```{r primaryinput}
 library(iotables)
 germany_io <- iotable_get( labelling = "iotables" )
 input_flow <- input_flow_get ( 
@@ -63,7 +63,9 @@ print (de_output[c(1:4)])
 #> 15       output             43910        1079446       245606
 ```
 
-The *matrix processing functions* of `coefficient_matrix_create`, `input_coefficient_matrix_create`, `output_coefficient_matrix_create`, `output_coefficients_create` create various coefficient matrixes with dividing the appropriate elements in the proper ordering and with retaining the proper labelling. Whilst input-output economics has a fairly standard analytical method, it has a long history, and very different applications in macroeconomic analysis, antitrust, tourism economics, cultural economics, or environmental impact assessment, to name a few.  Different disciplines have incorporated the use of the input-output tables with a slightly different vocabulary.  The names of our data wrangling and anaytical functions follow the conventions of *Eurostat Manual*, because the original aim of our package was to give a programmatic, reproducbile access to the tables harmonized by the Eurostat statistical agency. However, in the package documention we tried to describe what are the other often used names for these matrixes.  For example, the input flow matrix in the Eurostat Manual is often called the inter-industry matrix in other literature. 
+The *matrix processing functions* of `coefficient_matrix_create`, `input_coefficient_matrix_create`, `output_coefficient_matrix_create`, `output_coefficients_create` create various coefficient matrixes with dividing the appropriate elements in the proper ordering and with retaining the proper labelling. The input coefficient matrixes are likely to be used in the demand-driven, original Leontief input-output model [@leontief_io_1951], and the output coefficients in the supply-driven dual model of Ghosh [@ghosh_1958]. 
+
+Whilst input-output economics has a fairly standard analytical method, it has a long history, and very different applications in macroeconomic analysis, antitrust, tourism economics, cultural economics, or environmental impact assessment, to name a few.  Different disciplines have incorporated the use of the input-output tables with a slightly different vocabulary.  The names of our data wrangling and anaytical functions follow the conventions of *Eurostat Manual*, because the original aim of our package was to give a programmatic, reproducbile access to the tables harmonized by the Eurostat statistical agency. However, in the package documention we tried to describe what are the other often used names for these matrixes.  For example, the input flow matrix in the Eurostat Manual is often called the inter-industry matrix in other literature. 
 
 ```{r}
 de_input_coeff <- input_coefficient_matrix_create( 
@@ -73,7 +75,7 @@ de_input_coeff <- input_coefficient_matrix_create(
 print (de_input_coeff[1:3, 1:3])
 ```
 
-The `leontieff_matrix_create` and `leontieff_inverse_create` create the most important object of input-output analysis, first described, and named in honour of Leontief [@leontief_io_1951]. The `ghosh_inverse_create()` the inverse from the ‘supply-driven’ input-output model developed by [@ghosh_1958].
+The `leontieff_matrix_create` and `leontieff_inverse_create` create the most important object of input-output analysis, first described, and named in honour of Leontief. The `ghosh_inverse_create()` the inverse from the ‘supply-driven’ input-output model.
 
 ```{r}
 L_de <- leontieff_matrix_create ( 
@@ -98,8 +100,6 @@ The [Working With Eurostat Data](https://iotables.dataobservatory.eu/articles/wo
 
 ## Environmental impacts
 When a particular form of environmental impact, for example, the emission of greenhouse gases, if a function of the technologies applied by an industry, the input-output system  is a powerful tool to understand the adverse impacts of various economic growth scenarios. The [Environmental Impacts](https://iotables.dataobservatory.eu/articles/environmental_impact.html) vignette explains environmental impact analysis with *iotables* in greater details. 
-
-
 
 ## References
 
