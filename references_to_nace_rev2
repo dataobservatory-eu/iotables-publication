@@ -1,0 +1,25 @@
+
+
+All observations that are to be described in terms of statistics require systematic classification. Classifications partition the universe of statistical observations according to sets that are as homogeneous as possible with respect to the
+characteristics of the object of the statistical survey.
+Statistical classifications are characterised by:
+a. exhaustive coverage of the observed universe;
+b. mutually exclusive categories: each element should be classified in only one category of the classification;
+c. methodological principles which allow the consistent allocation of the elements to the various categories of the
+classification.
+9. More specifically, hierarchical classifications are characterised by a finer and finer partition of categories, which
+makes it possible to collect and present the information at various levels of aggregation.
+
+[@eurostat_nace_rev2_2008, p14]
+
+NACE is the European standard classification of productive economic activities. NACE presents the universe of economic activities partitioned in such a way that a NACE code can be associated with a statistical unit carrying them
+out.
+11. An economic activity takes place when resources such as capital goods, labour, manufacturing techniques or intermediary products are combined to produce specific goods or services. Thus, an economic activity is characterised by
+an input of resources, a production process and an output of products (goods or services). 
+[@eurostat_nace_rev2_2008, p15]
+
+
+i. a first level consisting of headings identified by an alphabetical code (sections),
+ii. a second level consisting of headings identified by a two-digit numerical code (divisions),
+iii. a third level consisting of headings identified by a three-digit numerical code (groups),
+iv. a fourth level consisting of headings identified by a four-digit numerical code (classes).
