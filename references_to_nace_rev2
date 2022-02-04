@@ -18,6 +18,7 @@ out.
 an input of resources, a production process and an output of products (goods or services). 
 [@eurostat_nace_rev2_2008, p15]
 
+Sometimes, one industry and its product refers to one NACE section (appreviated with an alphabetical code, such as ... ), and sometimes with a NACE division (abbreviated with a two-digit numerical code, often quoted together with the containing section), and sometimes several divisions combined.  They never go down to the level of groups (three-digit precision) or classes (four-digit) precision.
 
 i. a first level consisting of headings identified by an alphabetical code (sections),
 ii. a second level consisting of headings identified by a two-digit numerical code (divisions),
