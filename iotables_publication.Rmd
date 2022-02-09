@@ -1,11 +1,11 @@
 ---
 title: "iotables: an R Package for Reproducible Input-Output Economics Analysis, Economic and Environmental Impact Assessment with Empirical Data"
 author: "Daniel Antal, Leo Lahti"
-subtitle: "Early draft of 04 February 2022 - DOI: 10.5281/zenodo.5970960"
+subtitle: "Early draft DOI: 10.5281/zenodo.5970960"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
   word_document: default
 bibliography:
 - iotables.bib
